@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+    <link rel = "icon" type = "image/png" href = "images/mochi.png">
+      <h1 >Welcome</h1>
+    <script type="text/javascript">
+      function show(tabName) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="logo"><a href="home.html"><img src="images/mochi.png" width="68px" height="58px;" ></a>
+    </div>
+    <nav>
+      <ul>
+        <li><button class="button" onclick="show('home')">Home</button></li>
+        <li><button class="button"  onclick="show('gallery')">Gallery</button></li>
+        <li><button class="button" onclick="show('careers')">Careers</button></li>
+      </ul>
+    </nav>
+    <div id="home" class="tab">
+      <fieldset>
+        <p >Hello!!!! <br>Let's learn web development <br>Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.<br>
+          Responsive Web Design is used in all types of modern web development</p>
+      </fieldset>
+    </div>
+    <div id="gallery" class="tab" style="display:none" >
+      <h2>Images</h2>
+      <fieldset>
+        <p>jpg</p>
+        <img src="images/mochi.jpg">
+      </fieldset>
+      <fieldset>
+        <p>gif</p>
+        <img src="images/mochi.gif">
+      </fieldset>
+      <fieldset>
+        <p>png</p>
+        <img src="images/mochi.png">
+      </fieldset>
+      <fieldset>
+        <p>svg</p>
+        <img src="images/mochi.svg" >
+      </fieldset>
+    </div>
+    <div class="tab" id="careers" style="display:none">
+      <fieldset>
+        <p><strong>Web developer</strong></p>
+        <p>Web developers usually design a site layout, producing a visually appealing home page and user-friendly interface, and can create content for the website on request.<br>
+ Developers ensure the site is usable on all web browsers after a website is fully operational, monitoring and upgrading as necessary.</p>
+        <button class="buttonc1" onclick="show('apl-form')" >Apply</button>
+      </fieldset>
+      <fieldset>
+        <p><strong>App developer</strong></p>
+        <p>App developers usually design an app layout, producing a visually appealing home page and user-friendly interface, and can create content for the mobile application on request.<br>
+ App developers ensure the app is usable on all mobile devices after an app is fully operational, monitoring and upgrading as necessary.</p>
+        <button class="buttonc1" onclick="show('apl-form')" >Apply</button>
+      </fieldset>
+    </div>
+    <div id="apl-form" class="tab" style="display:none">
+      <h1>Application</h1>
+      <h3>Fill in your details to apply </h3>
+      <form class="form1">
+        <fieldset>
+          <label>Full name: <input type="text" id="txtName" placeholder="name"></label><br>
+          <label>Email Id: <input type="email" id="txtEmail" placeholder="rj@gmail.com"></label><br>
+          <label>Gender: <input type="radio" name="gender" id="male">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female">
+          <label for="female">Female</label></label><br>
+          <label>DOB: <input type="date" id="txtdob"></label><br><br><br>
+          <input type="button" class="buttona1" value="Submit" id="btnSubmit" >
+        </fieldset>
+
+    </div>
+
+
+
+
+
+  </body>
+</html>
