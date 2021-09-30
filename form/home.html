@@ -15,6 +15,28 @@
         }
         document.getElementById(tabName).style.display = "block";
       }
+
+    </script>
+    <script type="text/javascript">
+    function saveData() {
+      document.cookie="name= "+document.getElementById('txtName').value;+" expires=Sun, 01 Oct 2022 12:00:00 UTC;"
+      document.cookie="email="+document.getElementById('txtEmail').value;+" expires=Sun, 01 Oct 2022 12:00:00 UTC";
+      document.cookie="txtdob="+document.getElementById('txtdob').value; +"expires=Sun, 01 Oct 2022 12:00:00 UTC";
+      var radios = document.getElementsByName('gender');
+
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          document.cookie="gender="+radios[i].value; +"expires=Sun, 01 Oct 2022 12:00:00 UTC";
+          break;
+        }
+      }
+      //alert('data saved');
+      console.log(document.cookie);
+      document.getElementById('form1').reset();
+
+    }
+
+
     </script>
   </head>
   <body>
@@ -29,7 +51,7 @@
     </nav>
     <div id="home" class="tab">
       <fieldset>
-        <p >Hello!!!! <br>Let's learn web development <br>Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.<br>
+        <p >Hello!!!! <br>Let us learn web development <br>Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.<br>
           Responsive Web Design is used in all types of modern web development</p>
       </fieldset>
     </div>
@@ -69,22 +91,19 @@
     <div id="apl-form" class="tab" style="display:none">
       <h1>Application</h1>
       <h3>Fill in your details to apply </h3>
-      <form class="form1">
+      <form class="form1" id="form1" >
         <fieldset>
           <label>Full name: <input type="text" id="txtName" placeholder="name"></label><br>
           <label>Email Id: <input type="email" id="txtEmail" placeholder="rj@gmail.com"></label><br>
-          <label>Gender: <input type="radio" name="gender" id="male">
+          <label>Gender: <input type="radio" name="gender" id="male" value="male">
           <label for="male">Male</label>
-          <input type="radio" name="gender" id="female">
+          <input type="radio" name="gender" id="female" value="female">
           <label for="female">Female</label></label><br>
           <label>DOB: <input type="date" id="txtdob"></label><br><br><br>
-          <input type="button" class="buttona1" value="Submit" id="btnSubmit" >
+          <input type="button" class="buttona1" value="Submit" id="btnSubmit" onclick="saveData()" >
         </fieldset>
 
     </div>
-
-
-
 
 
   </body>
